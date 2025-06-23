@@ -1,0 +1,289 @@
+/* Import a horror-themed font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+:root {
+    --background: #000000;
+    --foreground: #f8f8f8;
+    --primary: #b91c1c; 
+    --primary-foreground: #ffffff;
+    --card: #1a1a1a;
+    --card-foreground: #f8f8f8;
+    --border: #2c2c2c;
+}
+
+body {
+    color: var(--foreground);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    /* Animated Gradient Background */
+    background: linear-gradient(-45deg, #000000, #3d0000, #000000, #6d0000);
+    background-size: 400% 400%;
+    animation: animateGradient 20s ease infinite;
+}
+
+/* Keyframe animation for the body background */
+@keyframes animateGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Keyframe animation for the title text gradient */
+@keyframes animateTextGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.title-container {
+    text-align: left;
+}
+
+/* Updated scary header text style */
+header h1 {
+    font-family: 'Creepster', cursive;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin: 0;
+    font-weight: normal;
+
+    /* Animated Gradient Text */
+    background: linear-gradient(90deg, #ff4d4d, #ff0000, #a10000, #ff0000, #ff4d4d);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: animateTextGradient 5s linear infinite;
+}
+
+header h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Style for the new tagline */
+.tagline {
+    font-family: monospace;
+    color: #a10000;
+    font-size: 1rem;
+    margin: 0;
+    padding-left: 5px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav a {
+    color: var(--foreground);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--primary);
+}
+
+#mobile-menu-button {
+    display: none;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--foreground);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+main {
+    flex-grow: 1;
+}
+
+#hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+#hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    border: 1px solid #ff00004f;
+}
+
+.button:hover {
+    background-color: #991b1b;
+}
+
+section {
+    padding: 2rem 0;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.story-card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(200, 0, 0, 0.2);
+}
+
+.story-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.story-card h3 {
+    font-size: 1.25rem;
+    margin: 1rem 1.5rem;
+}
+
+.story-card p {
+    margin: 0 1.5rem 1.5rem;
+    color: #aaa;
+    flex-grow: 1;
+}
+
+.story-card .button {
+    margin: 0 1.5rem 1.5rem;
+    align-self: flex-start;
+}
+
+.story-article {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+}
+
+.story-article h2 {
+    text-align: left;
+    margin-top: 0;
+    color: var(--primary);
+    font-family: 'Times New Roman', serif;
+}
+
+.story-article p {
+    margin-bottom: 1.5em;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border);
+    color: #aaa;
+}
+
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+}
+
+#mobile-menu.mobile-menu-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#mobile-menu nav ul {
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#mobile-menu nav a {
+    font-size: 2rem;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    .tagline {
+        font-size: 0.9rem;
+    }
+    header nav {
+        display: none;
+    }
+    #mobile-menu-button {
+        display: block;
+    }
+}
